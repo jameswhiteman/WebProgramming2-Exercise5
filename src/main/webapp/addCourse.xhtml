@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://xmlns.jcp.org/jsf/core"
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+xmlns:jl="http://xmlns.jcp.org/jsf/composite/jsflive">
+
+<h:head>
+	<title>Add Course</title>
+	<h:outputStylesheet library="css" name="Common.css" />
+</h:head>
+
+<h:body>
+	<h:form>
+		<h:inputText styleClass="inputTextNormal" id="name" value="#{beanCourse.name}" label="Name">
+			<f:validateRequired />
+		</h:inputText>
+		<h:message for="name" style="color:red;font-size:12px" />
+		<br/>
+
+		<h:inputText styleClass="inputTextNormal" id="id" value="#{beanCourse.id}" label="Course ID">
+        	<f:validateLength minimum="3" maximum="3" />
+    	</h:inputText>
+    	<h:message for="id" style="color:red;font-size:12px" />
+    	<br/>
+
+    	<h:selectOneMenu styleClass="inputDropdownNormal" id="department" value="#{beanCourse.department}">
+    		<f:selectItem itemValue="Computer Science" itemLabel="Computer Science" />
+    		<f:selectItem itemValue="Mathematics" itemLabel="Mathematics" />
+    		<f:selectItem itemValue="English" itemLabel="English" />
+    		<f:selectItem itemValue="History" itemLabel="History" />
+    		<f:selectItem itemValue="Spanish" itemLabel="Spanish" />
+    	</h:selectOneMenu>
+    	<br/><br/>
+
+    	<h:commandButton styleClass="buttonNormal" value="Back" type="submit" action="back" immediate="true" />
+    	<h:commandButton styleClass="buttonNormal" value="Submit" type="submit" action="add" />
+
+    </h:form>
+</h:body>
+
+</html>

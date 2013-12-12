@@ -1,0 +1,41 @@
+<!--
+@author James Whiteman
+
+The registration form. Contains every input for the user to
+register as a voter. The data is linked to the BeanUserInfo
+managed bean, which, upon submission of the button, will send
+the data in the form of a User object to the BeanVoterCount
+managed bean.
+-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://xmlns.jcp.org/jsf/core"
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+xmlns:jl="http://xmlns.jcp.org/jsf/composite/jsflive">
+
+<!-- Head -->
+<h:head>
+
+<!-- Page Title & External CSS -->
+<title>Welcome</title>
+<h:outputStylesheet library="css" name="UserInfo.css" />
+
+</h:head>
+
+<!-- Body -->
+<h:body styleClass="bodyPage">
+	<div class="divPage">
+		<h:form>
+			<h:commandLink styleClass="linkNormal" value="Student Registration" action="addStudent" />
+			<br/>
+			<h:commandLink styleClass="linkNormal" value="Create New Course" action="addCourse" />
+			<br/>
+			<h:commandLink styleClass="linkNormal" value="Enroll Student in Courses" action="enroll" />
+			<br/>
+			<h:commandLink styleClass="linkNormal" value="Class Roster" action="roster" />
+		</h:form>
+	</div>
+</h:body>
+
+</html>

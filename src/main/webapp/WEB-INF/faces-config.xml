@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+        version="2.0">
+
+<!-- Possible Navigations from the Welcome Page -->
+    <navigation-rule>
+    	<from-view-id>index.xhtml</from-view-id>
+    	<navigation-case>
+    		<from-outcome>addStudent</from-outcome>
+    		<to-view-id>addStudent.xhtml</to-view-id>
+    	</navigation-case>
+        <navigation-case>
+            <from-outcome>addCourse</from-outcome>
+            <to-view-id>addCourse.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>enroll</from-outcome>
+            <to-view-id>enrollmentStudent.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>roster</from-outcome>
+            <to-view-id>roster.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+<!-- Possible navigations from the add student page -->
+    <navigation-rule>
+    	<from-view-id>addStudent.xhtml</from-view-id>
+    	<navigation-case>
+    		<from-outcome>back</from-outcome>
+    		<to-view-id>index.xhtml</to-view-id>
+    	</navigation-case>
+    	<navigation-case>
+    		<from-outcome>add</from-outcome>
+    		<to-view-id>infoStudent.xhtml</to-view-id>
+    	</navigation-case>
+    </navigation-rule>
+
+<!-- Possible navigations from the add course page -->
+    <navigation-rule>
+        <from-view-id>addCourse.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>add</from-outcome>
+            <to-view-id>infoCourse.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+<!-- Possible navigations from the enroll student page -->
+    <navigation-rule>
+        <from-view-id>enrollmentStudent.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>next</from-outcome>
+            <to-view-id>enrollmentCourses.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+<!-- Possible navigations from the enroll student in courses page -->
+    <navigation-rule>
+        <from-view-id>enrollmentCourses.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>enrollmentStudent.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>submit</from-outcome>
+            <to-view-id>infoStudent.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+<!-- Possible navigations in the student information page -->
+    <navigation-rule>
+        <from-view-id>infoStudent.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+<!-- Possible navigations in the course information page -->
+    <navigation-rule>
+        <from-view-id>infoCourse.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+<!-- Possible navigations in the class roster page -->
+    <navigation-rule>
+        <from-view-id>roster.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+</faces-config>
