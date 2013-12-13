@@ -3,17 +3,22 @@ package edu.ndnu.jwhiteman;
 import java.util.ArrayList;
 import javax.persistence.*;
 
-@Embeddable
 @Entity
 public class Course
 {
 	// Properties
 	private String name;
-	private String id;
+	@Id private String id;
 	private String department;
-	@ElementCollection private ArrayList<Student> students;
 
 	// Constructor
+	public Course()
+	{
+		this.name = "";
+		this.id = "";
+		this.department = "";
+	}
+
 	public Course(String name, String id, String department)
 	{
 		this.name = name;
@@ -37,11 +42,6 @@ public class Course
 		this.department = department;
 	}
 
-	public void setStudents(ArrayList<Student> students)
-	{
-		this.students = students;
-	}
-
 	// Getters
 	public String getName()
 	{
@@ -56,10 +56,5 @@ public class Course
 	public String getDepartment()
 	{
 		return department;
-	}
-
-	public ArrayList<Student> getStudents()
-	{
-		return students;
 	}
 }

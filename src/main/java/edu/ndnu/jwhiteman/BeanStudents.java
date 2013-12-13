@@ -27,10 +27,14 @@ public class BeanStudents implements Serializable
 	{
 		DatabaseOperator operator = new DatabaseOperator();
 		List<Student> operatorStudents = operator.getStudents();
-		students.clear();
-		for (int i = 0; i < operatorStudents.size(); i++)
+		if (operatorStudents != null)
 		{
-			students.add(operatorStudents.get(i));
+			System.out.println("POOP1: " + operatorStudents.size());
+			students.clear();
+			for (int i = 0; i < operatorStudents.size(); i++)
+			{
+				students.add(operatorStudents.get(i));
+			}
 		}
 		return students;
 	}

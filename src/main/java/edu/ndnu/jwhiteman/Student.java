@@ -10,22 +10,29 @@ package edu.ndnu.jwhiteman;
 import java.util.ArrayList;
 import javax.persistence.*;
 
-@Embeddable
 @Entity
 public class Student
 {
 	// Properties
-	@GeneratedValue @Id private String studentId;
+	@GeneratedValue @Id private String id;
 	private String firstName;
 	private String lastName;
 	private String homeAddress;
 	private String campusAddress;
-	@ElementCollection private ArrayList<Course> courses;
 
 	// Constructor
+	public Student()
+	{
+		this.id = "";
+		this.firstName = "";
+		this.lastName = "";
+		this.homeAddress = "";
+		this.campusAddress = "";
+	}
+
 	public Student(String firstName, String lastName, String homeAddress, String campusAddress)
 	{
-		this.studentId = studentId;
+		this.id = "";
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.homeAddress = homeAddress;
@@ -33,9 +40,9 @@ public class Student
 	}
 
 	// Setters
-	public void setStudentId(String studentId)
+	public void setId(String id)
 	{
-		this.studentId = studentId;
+		this.id = id;
 	}
 
 	public void setFirstName(String firstName)
@@ -58,15 +65,10 @@ public class Student
 		this.campusAddress = campusAddress;
 	}
 
-	public void setCourses(ArrayList<Course> courses)
-	{
-		this.courses = courses;
-	}
-
 	// Getters
 	public String getStudentId()
 	{
-		return studentId;
+		return id;
 	}
 
 	public String getFirstName()
@@ -87,10 +89,5 @@ public class Student
 	public String getCampusAddress()
 	{
 		return campusAddress;
-	}
-
-	public ArrayList<Course> getCourses()
-	{
-		return courses;
 	}
 }
