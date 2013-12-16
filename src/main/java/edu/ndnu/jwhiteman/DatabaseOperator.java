@@ -46,7 +46,7 @@ public class DatabaseOperator implements Serializable
 
 	// Save Data
 	public void saveStudent(Student e)
-	{\
+	{
 		EntityManager em = emf.createEntityManager();
 		try
 		{
